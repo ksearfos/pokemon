@@ -69,3 +69,31 @@ snubbull:
     :candy: 59
     :extra: 0
     :extra_type: 
+pidgey:
+  :name: pidgey
+  :pokemon:
+  - :name: pidgeotto
+    :population: 1
+    :evolution:
+      :candy: 50
+      :extra: 0
+      :extra_type: 
+      :target: pidgeot
+  - :name: pidgeot
+    :population: 1
+    :evolution:
+      :candy: 0
+      :extra: 0
+      :extra_type: 
+      :target: unknown
+  - :name: pidgey
+    :population: 5
+    :evolution:
+      :candy: 12
+      :extra: 0
+      :extra_type: 
+      :target: pidgeotto
+  :current:
+    :candy: 102
+    :extra: 0
+    :extra_type: 
