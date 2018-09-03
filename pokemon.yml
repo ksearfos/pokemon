@@ -8,7 +8,64 @@ sunkern:
       :candy: 50
       :extra: 1
       :extra_type: :sun_stone
+      :target: unknown
   :current:
     :candy: 150
     :extra: 1
     :extra_type: :sun_stone
+hoppip:
+  :name: hoppip
+  :pokemon:
+  - :name: skiploom
+    :population: 1
+    :evolution:
+      :candy: 100
+      :extra: 0
+      :extra_type: 
+      :target: unknown
+  - :name: hoppip
+    :population: 2
+    :evolution:
+      :candy: 25
+      :extra: 0
+      :extra_type: 
+      :target: skiploom
+  :current:
+    :candy: 57
+    :extra: 0
+    :extra_type: 
+abra:
+  :name: abra
+  :pokemon:
+  - :name: abra
+    :population: 1
+    :evolution:
+      :candy: 25
+      :extra: 0
+      :extra_type: 
+      :target: unknown
+  :current:
+    :candy: 3
+    :extra: 0
+    :extra_type: 
+snubbull:
+  :name: snubbull
+  :pokemon:
+  - :name: snubbull
+    :population: 2
+    :evolution:
+      :candy: 50
+      :extra: 0
+      :extra_type: 
+      :target: granbull
+  - :name: granbull
+    :population: 1
+    :evolution:
+      :candy: 0
+      :extra: 0
+      :extra_type: 
+      :target: unknown
+  :current:
+    :candy: 59
+    :extra: 0
+    :extra_type: 

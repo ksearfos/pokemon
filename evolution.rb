@@ -1,23 +1,30 @@
 require_relative 'evolution/item'
 
 class Evolution
-  attr_reader :requirements
+  UNKNOWN_TARGET = 'unknown'.freeze
 
-  def self.build(requirements)
+  attr_reader :requirements, :target
+
+  def self.build(target: UNKNOWN_TARGET, **requirements)
     required_items = ItemSet.build(requirements)
     candy = Item.build(required: required_items.candy, type: "candy")
     extra = Item.build(required: required_items.extra, type: required_items.extra_type)
-    new(required_items, candy, extra)
+    new(required_items, candy, extra, target.downcase)
   end
 
-  def initialize(requirements, candy, extra)
+  def initialize(requirements, candy, extra, target)
     @requirements = requirements
     @candy = candy
     @extra = extra
+    @target = target
   end
 
   def possible?
     @candy.needed?
+  end
+
+  def target_known?
+    @target != UNKNOWN_TARGET
   end
 
   def calculate_progress(current_items)
@@ -32,13 +39,15 @@ class Evolution
     if extras_missing?
       puts "    + find #{extras_missing} more #{@extra.type} to maximize evolutions"
     else
-      puts "    + catch #{catches_needed} more pokemon to evolve another"
+      puts "    + catch #{catches_needed} more to evolve another"
       puts "    + find #{@requirements.extra}(s) more #{@extra.type} to evolve another" if @extra.needed?
     end
+
+    puts "    + becomes #{@target}"
   end
 
   def to_h
-    requirements.to_h
+    requirements.to_h.merge(target: @target)
   end
 
   def currently_possible

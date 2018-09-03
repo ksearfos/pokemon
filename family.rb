@@ -1,3 +1,5 @@
+require_relative 'evolution/order'
+
 class Family
   attr_accessor :pokemon
   attr_reader :name, :current
@@ -21,7 +23,7 @@ class Family
     else
       puts "You have #{population} pokemon in the #{name} family:"
 
-      pokemon.each do |pokemon|
+      Evolution::Order.for(pokemon).each do |pokemon|
         pokemon.calculate_evolution(current)
         pokemon.display_summary
       end

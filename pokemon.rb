@@ -37,7 +37,7 @@ class Pokemon
   private
 
   def transfers_available
-    [population - evolutions_possible, 0].max
+    [population - evolution.currently_possible, 0].max
   end
 
   def evolutions_possible

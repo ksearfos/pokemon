@@ -31,6 +31,8 @@ module PokemonAdder
         pokemon_args[:evolution][:extra_type] = extra_type
         pokemon_args[:evolution][:extra] = IOHelpers.prompt("How many does it take?")
       end
+
+      pokemon_args[:evolution][:target] = IOHelpers.prompt("What does it become?")
     end
 
     pokemon_args
