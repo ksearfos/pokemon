@@ -1,0 +1,14 @@
+---
+sunkern:
+  :name: sunkern
+  :pokemon:
+  - :name: sunkern
+    :population: 3
+    :evolution:
+      :candy: 50
+      :extra: 1
+      :extra_type: :sun_stone
+  :current:
+    :candy: 150
+    :extra: 1
+    :extra_type: :sun_stone
