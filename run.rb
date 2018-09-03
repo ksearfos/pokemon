@@ -7,16 +7,12 @@ require_relative 'pokemon'
 require_relative 'family'
 require_relative 'persistence'
 
-name = IOHelpers.prompt("Pokemon family:")
-family = Persistence.load(name) || PokemonAdder.new_family(name)
+OPTIONS = {
+  'view pokemon' => 'show_pokemon.rb',
+  'add pokemon' => 'show_pokemon.rb',
+  'show possible evolutions' => 'show_evolutions.rb',
+}
 
-family.display_summary
-
-add_another = IOHelpers.yes_no "Would you like to add another?"
-
-if add_another
-  pokemon_args = PokemonAdder.new_member(family)
-  family.pokemon << Pokemon.build(pokemon_args)
-  family.display_summary
-  Persistence.save(family)
-end
+menu = IOHelpers::Menu.new "Options:", OPTIONS.keys
+choice = menu.choose
+system "ruby #{OPTIONS.fetch(choice)}"

@@ -20,4 +20,14 @@ module Persistence
 
     Family.build(data) if data
   end
+
+  def self.load_all
+    families.map { |family| Family.build(family) }
+  end
+
+  def self.families
+    yaml_store.transaction do |store|
+      store.roots.map { |root| store[root] }
+    end
+  end
 end

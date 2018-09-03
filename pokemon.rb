@@ -20,11 +20,17 @@ class Pokemon
   end
 
   def calculate_evolution(current_items)
+    return unless evolves?
     evolution.calculate_progress(current_items)
   end
 
   def evolves?
     evolution.possible?
+  end
+
+  def evolutions_possible
+    return 0 unless evolves?
+    [evolution.currently_possible, evolvable_population].min
   end
 
   def to_h
@@ -38,11 +44,6 @@ class Pokemon
 
   def transfers_available
     [population - evolution.currently_possible, 0].max
-  end
-
-  def evolutions_possible
-    return 0 unless evolves?
-    [evolution.currently_possible, evolvable_population].min
   end
 
   def evolvable_population

@@ -18,7 +18,8 @@ class Evolution
     private
 
     def base_kind
-      @pokemon.find { |poke| !@targets.include?(poke.name) && poke.evolution.target_known? }
+      @pokemon.find { |poke| !@targets.include?(poke.name) && poke.evolution.target_known? } ||
+        @pokemon.first
     end
 
     def find_target(pokemon)

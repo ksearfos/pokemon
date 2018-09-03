@@ -17,14 +17,18 @@ class Family
     @pokemon = pokemon
   end
 
+  def calculate_evolutions
+    @pokemon.each { |pokemon| pokemon.calculate_evolution(current) }
+  end
+
   def display_summary
     if population == 0
       puts "You have no #{name}s at the moment."
     else
       puts "You have #{population} pokemon in the #{name} family:"
 
+      calculate_evolutions
       Evolution::Order.for(pokemon).each do |pokemon|
-        pokemon.calculate_evolution(current)
         pokemon.display_summary
       end
     end
