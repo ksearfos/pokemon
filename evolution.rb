@@ -33,9 +33,6 @@ class Evolution
   end
 
   def display_summary
-    return unless possible?
-    puts "    + you can currently evolve #{currently_possible}"
-
     if extras_missing?
       puts "    + find #{extras_missing} more #{@extra.type} to maximize evolutions"
     else

@@ -97,3 +97,80 @@ pidgey:
     :candy: 102
     :extra: 0
     :extra_type: 
+bellsprout:
+  :name: bellsprout
+  :pokemon:
+  - :name: bellsprout
+    :population: 2
+    :evolution:
+      :candy: 25
+      :extra: 0
+      :extra_type: 
+      :target: weepinbell
+  :current:
+    :candy: 27
+    :extra: 0
+    :extra_type: 
+chikorita:
+  :name: chikorita
+  :pokemon:
+  - :name: chikorita
+    :population: 1
+    :evolution:
+      :candy: 25
+      :extra: 0
+      :extra_type: 
+      :target: bayleef
+  - :name: bayleef
+    :population: 1
+    :evolution:
+      :candy: 0
+      :extra: 0
+      :extra_type: 
+      :target: unknown
+  :current:
+    :candy: 26
+    :extra: 0
+    :extra_type: 
+hoothoot:
+  :name: hoothoot
+  :pokemon:
+  - :name: hoothoot
+    :population: 2
+    :evolution:
+      :candy: 50
+      :extra: 0
+      :extra_type: 
+      :target: noctowl
+  - :name: noctowl
+    :population: 1
+    :evolution:
+      :candy: 0
+      :extra: 0
+      :extra_type: 
+      :target: unknown
+  :current:
+    :candy: 76
+    :extra: 0
+    :extra_type: 
+natu:
+  :name: natu
+  :pokemon:
+  - :name: xatu
+    :population: 1
+    :evolution:
+      :candy: 0
+      :extra: 0
+      :extra_type: 
+      :target: unknown
+  - :name: natu
+    :population: 3
+    :evolution:
+      :candy: 50
+      :extra: 0
+      :extra_type: 
+      :target: xatu
+  :current:
+    :candy: 122
+    :extra: 0
+    :extra_type: 

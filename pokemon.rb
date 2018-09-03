@@ -16,7 +16,17 @@ class Pokemon
 
   def display_summary
     puts "  - #{population} #{name} (you may transfer up to #{transfers_available})"
-    evolution.display_summary
+
+    if evolves?
+      print "    + you can currently evolve #{evolutions_possible}"
+      if missing?
+        print " (of #{evolution.currently_possible} max)\n"
+        puts "    + catch #{missing} more to maximize evolutions"
+      else
+        print "\n"
+      end
+      evolution.display_summary
+    end
   end
 
   def calculate_evolution(current_items)
@@ -43,10 +53,18 @@ class Pokemon
   private
 
   def transfers_available
-    [population - evolution.currently_possible, 0].max
+    [population - evolutions_possible - 1, 0].max
   end
 
   def evolvable_population
     [population - 1, 0].max  # keep one unevolved pokemon
+  end
+
+  def missing?
+    evolution.currently_possible > evolutions_possible
+  end
+
+  def missing
+    evolution.currently_possible - evolvable_population
   end
 end

@@ -15,4 +15,5 @@ OPTIONS = {
 
 menu = IOHelpers::Menu.new "Options:", OPTIONS.keys
 choice = menu.choose
+puts ""
 system "ruby #{OPTIONS.fetch(choice)}"

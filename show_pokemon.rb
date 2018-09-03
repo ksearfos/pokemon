@@ -12,7 +12,7 @@ family = Persistence.load(name) || PokemonAdder.new_family(name)
 
 family.display_summary
 
-add_another = IOHelpers.yes_no "Would you like to add another?"
+add_another = IOHelpers.yes_no "Would you like to add one?"
 
 if add_another
   pokemon_args = PokemonAdder.new_member(family)
